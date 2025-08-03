@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        onload = () => {
+        let geo = navigator.geolocation;
+        const geoCoords = function(posicao) {
+            let lat = posicao.coords.latitude;
+            let lon = posicao.coords.longitude;
+            output.innerHTML = `Latitude: ${lat}, Longitude: ${lon}`;
+        }
+        geo.getCurrentPosition(geoCoords);
+        //implementacao do geolocation continuo que fica atualizando a posicao
+        //geo.watchPosition(geoCoords); 
+    }
+    </script>
+
+</head>
+<body>
+    <h1>Geolocation Example</h1>
+    <p id="output"></p>
+</body>
+</html>
